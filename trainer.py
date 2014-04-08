@@ -1,4 +1,5 @@
 import tokenizer
+from classifier import Classifier
 class Trainer(object):
     
     """docstring for Trainer"""
@@ -26,9 +27,3 @@ class Trainer(object):
             except:
                 self.data['frequencies'][token][className] = 1
 
-t = Trainer(tokenizer)
-t.train('bu yaz hava gayet iyi', 'erkek')
-t.train('seni seviyorum mucuk mucuk opucem seni bu yaz', 'kadin')
-t.train('seni bu nedenle sevmiyorum', 'kadin')
-
-print t.data
