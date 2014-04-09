@@ -1,29 +1,21 @@
 import tokenizer
 from classifier import Classifier
+from trainedData import TrainedData
+
 class Trainer(object):
     
     """docstring for Trainer"""
     def __init__(self, tokenizer):
         super(Trainer, self).__init__()
         self.tokenizer = tokenizer
-        self.data = {
-            'classCounts' : {},
-            'frequencies' : {}
-        }
+        self.data = TrainedData()
 
     def train(self, text, className):
-        
-        self.data['classCounts'][className] = self.data['classCounts'].get(className, 0) + 1
+        """
+        enhances trained data using the given text and class
+        """
+        self.data.increaseClass(className)
 
         tokens = self.tokenizer.tokenize(text)
         for token in tokens:
-
-            if self.data['frequencies'].get(token) is None:
-                self.data['frequencies'][token] = {}
-
-            try:
-                self.data['frequencies'][token][className] += 1
-
-            except:
-                self.data['frequencies'][token][className] = 1
-
+            self.data.increaseToken(token, className)
