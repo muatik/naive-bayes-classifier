@@ -19,3 +19,14 @@ class Trainer(object):
         tokens = self.tokenizer.tokenize(text)
         for token in tokens:
             self.data.increaseToken(token, className)
+
+
+
+t = Trainer(tokenizer)
+t.train('bu yaz hava gayet iyi', 'erkek')
+t.train('maraba opucem seni sevmiyorum', 'gay')
+t.train('seni seviyorum mucuk mucuk opucem seni bu yaz', 'kadin')
+t.train('seni bu nedenle sevmiyorum', 'kadin')
+
+c = Classifier(t.data, tokenizer)
+print c.classify("bu mucuk maraba")
