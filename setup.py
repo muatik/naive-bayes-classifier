@@ -5,14 +5,15 @@ try:
 except ImportError:
     from distutils.core import setup
 
-setup(name='naive-bayes-classifier',
+setup(name='naiveBayesClassifier',
       version='0.1',
       license='MIT',
       description='yet another general purpose naive bayesian classifier',
       long_description=open('README.md').read(),
+      url='https://github.com/muatik/naive-bayes-classifier',
       author='Mustafa Atik',
-      author_email='<muatik@gmail.com>',
+      author_email='muatik@gmail.com',
       maintainer='Nejdet Yucesoy',
-      maintainer_email='<nejdetyucesoy@gmail.com>',
-      packages=['nbc'],
+      maintainer_email='nejdetyucesoy@gmail.com',
+      packages=['naiveBayesClassifier'],
       platforms='any')

@@ -1,4 +1,3 @@
-import tokenizer
 from classifier import Classifier
 from trainedData import TrainedData
 
@@ -15,8 +14,7 @@ class Trainer(object):
         enhances trained data using the given text and class
         """
         self.data.increaseClass(className)
-
+        
         tokens = self.tokenizer.tokenize(text)
         for token in tokens:
             self.data.increaseToken(token, className)
-

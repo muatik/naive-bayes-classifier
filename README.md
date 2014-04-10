@@ -10,5 +10,5 @@ yet another general purpose naive bayesian classifier. (under heavy development)
 
 
 ## AUTHORS
-* Mustafa Atik
-* Nejdet Yucesoy
+* Mustafa Atik @muatik
+* Nejdet Yucesoy @nejdetckenobi
