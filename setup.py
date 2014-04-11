@@ -5,8 +5,9 @@ try:
 except ImportError:
     from distutils.core import setup
 
+
 setup(name='naiveBayesClassifier',
-      version='0.1',
+      version='0.1.1.3',
       license='MIT',
       description='yet another general purpose naive bayesian classifier',
       long_description=open('README.md').read(),
