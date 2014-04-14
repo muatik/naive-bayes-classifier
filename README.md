@@ -1,11 +1,17 @@
-naive-bayes-classifier
+Naive Bayesian Classifier
 ======================
 
-yet another general purpose naive bayesian classifier. (under heavy development)
+yet another general purpose Naive Bayesian classifier. (under heavy development)
+
+##Installation
+You can install this package using the following ```pip``` command:
+
+```sh
+$ sudo pip install naiveBayesClassifier
+```
+
 
 ##Example
-
-
 
 ```python
 """
@@ -38,13 +44,18 @@ newsClassifier = Classifier(newsTrainer.data, tokenizer)
 
 # Now you have a classifier which can give a try to classifiy text of news whose
 # category is unknown, yet.
-classification = newsClassifier.classify("Even if I eat too much, is'n it possible to lose some weight")
+unknownInstance = "Even if I eat too much, is not it possible to lose some weight"
+classification = newsClassifier.classify(unknownInstance)
 
-# the classification variable holds the detected categories sorted
+# the classification variable holds the possible categories sorted by 
+# their probablity value
 print classification
 ```
+***Note***: Definitely you will need much more training data than the amount in the above example. Really, a few lines of text like in the example is out of the question to be sufficient training set.
 
-##What is Naive Bayes Theorem and Classifier
+
+
+##What is the Naive Bayes Theorem and Classifier
 It is needles to explain everything once again here. Instead, one of the most eloquent explanations is quoted here.
 
 The following explanation is quoted from [another Bayes classifier][1] which is written in Go. 
@@ -101,11 +112,12 @@ If you are very curious about Naive Bayes Theorem, you may find the following li
 * [Insect Examples][2]
 * [Stanford NLP - Bayes Classifier][3]
 
+#Improvements
+This classifier uses a very simple tokenizer which is jus a module to split sentences into words. If your training set is large, you can rely on the available tokenizer, otherwise you need to have a better tokenizer specialized to the language of your training texts.
 
 ## TODO
 * inline docs
 * unit-tests
-
 
 ## AUTHORS
 * Mustafa Atik @muatik
