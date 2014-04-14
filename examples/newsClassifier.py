@@ -30,4 +30,4 @@ newsClassifier = Classifier(newsTrainer.data, tokenizer)
 classification = newsClassifier.classify("Obama is")
 
 # the classification variable holds the detected categories sorted
-print classification
+print(classification)
