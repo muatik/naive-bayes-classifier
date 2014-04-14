@@ -1,4 +1,5 @@
 from __future__ import division
+import operator
 
 class Classifier(object):
     """docstring for Classifier"""
@@ -21,11 +22,13 @@ class Classifier(object):
             tokenProbs = [self.getTokenProb(token, className) for token in tokens]
             
             #P(Token_1|Class_i) * P(Token_2|Class_i) * ... * P(Token_n|Class_i)
-            probInClass = reduce(lambda a,b: a*b, {i for i in tokenProbs if i} ) 
+            probInClass = reduce(lambda a,b: a*b, (i for i in tokenProbs if i) ) 
             
             probsByClasses[className] = probInClass / self.getPrior(className)
-
-        return probsByClasses
+        
+        return sorted(probsByClasses.iteritems(), 
+            key=operator.itemgetter(1), 
+            reverse=True)
 
 
     def getPrior(self, className):

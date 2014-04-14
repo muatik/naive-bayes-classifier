@@ -1,2 +1,2 @@
 def tokenize(text):
-    return text.split(' ')
+    return text.lower().split(' ')
