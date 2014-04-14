@@ -28,7 +28,7 @@ newsTrainer = Trainer(tokenizer)
 # You need to train the system passing each text one by one to the trainer module.
 newsSet =[
     {'text': 'not to eat too much is not enough to lose weight', 'category': 'health'},
-    {'text': 'Russia try to invade Ukraine', 'category': 'politics'},
+    {'text': 'Russia is trying to invade Ukraine', 'category': 'politics'},
     {'text': 'do not neglect exercise', 'category': 'health'},
     {'text': 'Syria is the main issue, Obama says', 'category': 'politics'},
     {'text': 'eat to lose weight', 'category': 'health'},
