@@ -1,5 +1,4 @@
-from classifier import Classifier
-from trainedData import TrainedData
+from naiveBayesClassifier.trainedData import TrainedData
 
 class Trainer(object):
     
