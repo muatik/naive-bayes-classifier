@@ -1,3 +1,5 @@
+from ExceptionNotSeen import NotSeen
+
 class TrainedData(object):
     def __init__(self):
         self.docCountOfClasses = {}
@@ -36,7 +38,13 @@ class TrainedData(object):
         return self.docCountOfClasses.get(className, None)
 
     def getFrequency(self, token, className):
+
         try:
-            return self.frequencies[token][className]
+            foundToken = self.frequencies[token]
+        except:
+            raise NotSeen(token)
+
+        try:
+            return foundToken[className]
         except:
             return None
