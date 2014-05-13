@@ -17,7 +17,10 @@ class Classifier(object):
         
         documentCount = self.data.getDocCount()
         classes = self.data.getClasses()
-        tokens = self.tokenizer.tokenize(text)
+
+        # only unique tokens
+        tokens = list(set(self.tokenizer.tokenize(text)))
+        
         probsOfClasses = {}
 
         for className in classes:
@@ -35,7 +38,7 @@ class Classifier(object):
             except:
                 tokenSetProb = 0
             
-            probsOfClasses[className] = tokenSetProb / self.getPrior(className)
+            probsOfClasses[className] = tokenSetProb * self.getPrior(className)
         
         return sorted(probsOfClasses.items(), 
             key=operator.itemgetter(1), 

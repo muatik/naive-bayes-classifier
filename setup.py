@@ -7,7 +7,7 @@ except ImportError:
 
 
 setup(name='naiveBayesClassifier',
-      version='0.1.3',
+      version='0.1.3.1',
       license='MIT',
       description='yet another general purpose naive bayesian classifier',
       long_description=open('README.md').read(),
