@@ -3,6 +3,8 @@ Naive Bayesian Classifier
 
 yet another general purpose Naive Bayesian classifier. (under heavy development)
 
+***Note:*** If you are looking for something professional and mature, please have a look at this: http://scikit-learn.org/
+
 ##Installation
 You can install this package using the following ```pip``` command:
 
