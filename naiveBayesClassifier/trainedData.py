@@ -1,4 +1,5 @@
-from ExceptionNotSeen import NotSeen
+from naiveBayesClassifier.ExceptionNotSeen import NotSeen
+
 
 class TrainedData(object):
     def __init__(self):
