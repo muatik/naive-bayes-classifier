@@ -21,7 +21,7 @@ class TrainedData(object):
             raise NotSeen(token)
         foundToken = self.frequencies[token]
         if className not in self.frequencies:
-            sys.stderr.write("Warning: token %s has no entry for class %s. Not decreasing." % (token, className))
+            sys.stderr.write("Warning: token %s has no entry for class %s. Not decreasing.\n" % (token, className))
             return
         if foundToken[className] < byAmount:
             raise ArithmeticError("Could not decrease %s/%s count (%i) by %i, "
