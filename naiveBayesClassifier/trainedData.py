@@ -1,3 +1,4 @@
+import sys
 from naiveBayesClassifier.ExceptionNotSeen import NotSeen
 
 
@@ -15,9 +16,18 @@ class TrainedData(object):
 
         self.frequencies[token][className] = self.frequencies[token].get(className, 0) + 1
 
-    def decreaseToken(self, token, className, byAmount = 1):
-        # will be implemented
-        pass
+    def decreaseToken(self, token, className, byAmount=1):
+        if token not in self.frequencies:
+            raise NotSeen(token)
+        foundToken = self.frequencies[token]
+        if className not in self.frequencies:
+            sys.stderr.write("Warning: token %s has no entry for class %s. Not decreasing." % (token, className))
+            return
+        if foundToken[className] < byAmount:
+            raise ArithmeticError("Could not decrease %s/%s count (%i) by %i, "
+                                  "as that would result in a negative number." % (
+                                      token, className, foundToken[className], byAmount))
+        foundToken[className] -= byAmount
 
     def getDocCount(self):
         """
@@ -39,13 +49,8 @@ class TrainedData(object):
         return self.docCountOfClasses.get(className, None)
 
     def getFrequency(self, token, className):
-
-        try:
+        if token in self.frequencies:
             foundToken = self.frequencies[token]
-        except:
+            return foundToken.get(className)
+        else:
             raise NotSeen(token)
-
-        try:
-            return foundToken[className]
-        except:
-            return None
