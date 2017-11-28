@@ -113,7 +113,7 @@ If you are very curious about Naive Bayes Theorem, you may find the following li
 * [Stanford NLP - Bayes Classifier][3]
 
 #Improvements
-This classifier uses a very simple tokenizer which is jus a module to split sentences into words. If your training set is large, you can rely on the available tokenizer, otherwise you need to have a better tokenizer specialized to the language of your training texts.
+This classifier uses a very simple tokenizer which is just a module to split sentences into words. If your training set is large, you can rely on the available tokenizer, otherwise you need to have a better tokenizer specialized to the language of your training texts.
 
 ## TODO
 * inline docs
