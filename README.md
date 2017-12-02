@@ -56,7 +56,7 @@ print classification
 
 
 ##What is the Naive Bayes Theorem and Classifier
-It is needles to explain everything once again here. Instead, one of the most eloquent explanations is quoted here.
+It is needless to explain everything once again here. Instead, one of the most eloquent explanations is quoted here.
 
 The following explanation is quoted from [another Bayes classifier][1] which is written in Go. 
 
